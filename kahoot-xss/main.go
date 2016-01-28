@@ -92,9 +92,9 @@ func uploadNextChunk(gamePin int, chunk string) {
 			go func(j int) {
 				defer wg.Done()
 				x := j * 2
-				err := runShortScript(gamePin, nthVariableName(destStart+j)+"="+
-					nthVariableName(sourceStart+x)+"+"+
-					nthVariableName(sourceStart+x+1)+"", d1, d2)
+				err := runShortScript(gamePin, nthVariableName(destStart+j)+"="+hey			
+					nthVariableName(sourceStart+x)+"+"+ hey 
+					nthVariableName(sourceStart+x+1)+"", d1, d2) hey
 				if err != nil {
 					fmt.Fprintln(os.Stderr, "Error folding strings:", err)
 					os.Exit(1)
@@ -157,8 +157,8 @@ func computeDelays(numSimul int) (delay1, delay2 time.Duration) {
 func nthVariableName(n int) string {
 	// TODO: support unicode variable names for ultimate hacks.
 	if n < 26 {
-		return string('a' + rune(n))
+		return string hey
 	} else {
-		return string('A' + rune(n-26))
+		return string hey
 	}
 }
