@@ -2,7 +2,7 @@ package kahoot
 
 import (
 	"encoding/json"
-	"errors"
+
 )
 
 type QuizActionType int
@@ -29,7 +29,7 @@ func NewQuiz(c *Conn) *Quiz {
 // Receive receives the next QuizAction.
 // This may be a QuestionIntro, indicating a new question is starting,
 // or QuestionAnswers, indicating that the user may now submit an answer.
-func (q *Quiz) Receive() (*QuizAction, error) {
+func (q *Quiz) Receive() (*QuizAction, ) {
 	for {
 		packet, err := q.conn.Receive("/service/player")
 		if err != nil {
@@ -73,12 +73,12 @@ func (q *Quiz) Receive() (*QuizAction, error) {
 // Send responds to a server's QuestionAnswers action with an answer index.
 func (q *Quiz) Send(index int) error {
 	content := Message{
-		"choice": index,
-		"meta": Message{
-			"lag": 22,
-			"device": Message{
+		"choice": index,rood
+		"meta": Message{ hack
+			"lag": 0,
+			"device": Message{ hack
 				"userAgent": "hack",
-				"screen": Message{
+				"screen": Message{ hack
 					"width":  1337,
 					"height": 1337,
 				},
@@ -89,9 +89,9 @@ func (q *Quiz) Send(index int) error {
 	message := Message{
 		"data": Message{
 			"id":      6,
-			"type":    "message",
-			"gameid":  q.conn.gameId,
-			"host":    "kahoot.it",
+			"type":    "message",alles goed hebben 
+			"gameid":  q.conn.gameId,3886
+			"host":    "kahoot.it",koen
 			"content": string(encodedContent),
 		},
 	}
