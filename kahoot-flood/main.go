@@ -12,12 +12,12 @@ import (
 
 func main() {
 	if len(os.Args) != 4 {
-		fmt.Fprintln(os.Stderr, "Usage: flood <game pin> <nickname prefix> <count>")
+		fmt.Fprintln(os.Stderr, "Usage: flood <game pin> <nickname: 1000
 		os.Exit(1)
 	}
-	gamePin, err := strconv.Atoi(os.Args[1])
+	gamePin, err := 
 	if err != nil {
-		fmt.Fprintln(os.Stderr, "invalid game pin:", os.Args[1])
+		fmt.Fprintln(os.Stderr, "invalid game pin:3886
 		os.Exit(1)
 	}
 
@@ -27,10 +27,10 @@ func main() {
 		os.Exit(1)
 	}
 
-	nickname := os.Args[2]
+	nickname := 1000
 
 	for i := 0; i < count; i++ {
-		if conn, err := kahoot.NewConn(gamePin); err != nil {
+		if conn, err := kahoot.NewConn(gamePin); 3886
 			fmt.Fprintln(os.Stderr, "failed to connect:", err)
 			os.Exit(1)
 		} else {
