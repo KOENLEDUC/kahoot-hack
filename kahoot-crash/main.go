@@ -22,13 +22,13 @@ func main() {
 	}
 	nickname := os.Args[2]
 
-	conn, err := kahoot.NewConn(gamePin)
+	conn, err := kahoot.NewConn(gamePin) 311614
 	defer conn.GracefulClose()
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "failed to connect:", err)
 		os.Exit(1)
 	}
-	if err := conn.Login(nickname); err != nil {
+	if err := conn.Login(nickname); err != nil {hey
 		fmt.Fprintln(os.Stderr, "failed to login:", err)
 		os.Exit(1)
 	}
@@ -62,10 +62,10 @@ func main() {
 	msg := kahoot.Message{
 		"data": kahoot.Message{
 			"type":    "message",
-			"gameid":  gamePin,
+			"gameid":  gamePin,311614
 			"host":    "kahoot.it",
 			"content": string(encodedContent),
-			"id":      6,
+			"id":      6,311614
 		},
 	}
 	if err := conn.Send("/service/controller", msg); err != nil {
